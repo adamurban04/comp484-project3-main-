@@ -12,6 +12,7 @@ const statusOutput = document.querySelector("#status-output");
 const timerButton = document.getElementById("timer-button");
 const controlPanel = document.getElementById("control-panel");
 const itemList = document.getElementById("item-list");
+const clearTimestampsBtn = document.getElementById("clear-timestamps-btn");
 
 /* ======================================= */
 // --- Task 3: Selecting and Changing Inner HTML ---
@@ -61,9 +62,21 @@ function createTimestamp() {
   const timestamp = document.createElement("span"); // everytime created new time span that gets apended
   timestamp.innerHTML = new Date().toLocaleTimeString();
   statusOutput.appendChild(timestamp);
+  clearTimestampsBtn.style.display = "block";
+}
+
+// Extra Credit: clear time stamps button + hide when no timestamps (cleared)
+
+function clearTimestamps() {
+  const timestamps = statusOutput.querySelectorAll("span");
+  timestamps.forEach(timestamp => {
+    timestamp.remove();
+  });
+  clearTimestampsBtn.style.display = "none";
 }
 
 toggleButton.addEventListener("click", toggleStatus);
+clearTimestampsBtn.addEventListener("click", clearTimestamps);
 
 /* ======================================= */
 // --- Task 10: Timed Animation ---
