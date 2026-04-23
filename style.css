@@ -38,3 +38,18 @@ body {
   /* Sets the element to be completely invisible and not take up space. */
   display: none;
 }
+
+/* Extra Credit: Clear Timestamps Button Styling */
+#clear-timestamps-btn {
+  display: none;
+}
+
+#clear-timestamps-btn:hover {
+  background-color: #d5d5d5;
+}
+
+/* Extra Credit: Timestamp Styling */
+#status-output span {
+  display: block;
+  margin: 8px 0;
+}
